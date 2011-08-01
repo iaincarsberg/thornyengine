@@ -18,6 +18,7 @@ in Node.js and a myriad of modern browsers.
 ##Examples
 
 ###Entity Component System
+```
 /*global console Stats, window*/
 require('./thorny/base')('./config/default.json', './demos/config.processing.json')(function ($) {
 	var gameLoop = $('thorny core game-loop').factory();
@@ -87,6 +88,7 @@ require('./thorny/base')('./config/default.json', './demos/config.processing.jso
 		});
 	});
 });
+```
 
 ##TODO
 Following is a list of technologies that I would like to support in time.
