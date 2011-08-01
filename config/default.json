@@ -1,0 +1,20 @@
+[
+	"thorny math vector2",
+	"thorny math poly2",
+	"thorny core observable",
+	"thorny core observer",
+	{
+		"path": "thorny core event",
+		"autoexec": true
+	},
+	{
+		"path": "thorny core time",
+		"autoexec": true
+	},
+	{
+		"path": "thorny core game-loop",
+		"omitIfNodejs": true
+	},
+	"./config/entity-system.json",
+	"./config/level.json"
+]

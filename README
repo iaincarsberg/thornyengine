@@ -1,0 +1,80 @@
+Working towards example code snippets
+	http://pastebin.com/hKLNMR6R
+
+
+
+
+Following is a list of cool features/libraries that I'd like thorny to 
+eventually have or work with.
+
+http://www.mindcontrol.org/~hplus/epic/
+	Used to make the moving of entities less jittery when there is a ton of
+	network latency.
+
+https://github.com/jadell/box2dnode or http://29a.ch/2010/4/17/box2d-2-flash-ported-javascript
+	To allow objects to bounce around a level with real physics.
+	
+http://storymoto.gamamoto.com/
+	To allow chained narrative.
+
+https://github.com/substack/dnode
+	Looks like it'll make syncing entities over the network really easy.
+	
+	
+
+
+
+// Example
+require('thorny/base')('./config/default.json')(function ($) {
+	var entitySystem = $('thorny entity-system');
+
+	// Make the actor template
+	entitySystem.makeEntity(this.template)
+		.addTag('actor')
+		.addComponent('position')
+		.addComponent('keys')
+		.addComponent('render-2d');
+
+	// Load the map
+	entitySystem.makeEntity()
+		.addComponent('level', 'some_map.json');
+		.addTag('level');
+
+	// Create an event trigger, that spawns zombies
+	entitySystem.makeEntity()
+		.useTag('event-trigger', this.concrete)
+		.updateComponent('bounds', {
+			x1: 0,
+			y1: 0,
+			x2: 10,
+			y2: 10
+			})
+		.updateComponent('triggered', function (entity) {
+			var 
+				location = entity.getComponent('position'),
+				i;
+
+			// Spawn 5 zombies
+			for (i=0; i < 5; i++) {
+				entitySystem.makeEntity()
+					.useTag('zombie', this.concrete)
+					.updateComponent('target', $('thorny entity-system').getTag('player'))
+					.updateComponent('position', {x: location.x + ((i * 10) - 25), y: location.y + 50})
+					.spawn($('thorny entity-system').getTag('level'));
+			};
+			})
+		.spawn($('thorny entity-system').getTag('level'));
+
+	// Spawn the player.
+	entitySystem.makeEntity()
+		.useTag('actor', this.concrete)
+		.addTag('player')
+		.updateComponent('position', {x: 50, y: 30})
+		.updateComponent('keys', {
+			'up': 'w',
+			'down': 's',
+			'left': 'a',
+			'right': 'd',
+			})
+		.spawn($('thorny entity-system').getTag('level'));
+});

@@ -1,0 +1,11 @@
+[
+	{
+		"path": "thorny level base",
+		"autoexec": true
+	},
+	"thorny level node",
+	"thorny level node-collection",
+	"thorny level 2d mesh",
+	"thorny level pathfinder astar",
+	"thorny level pathfinder funnel"
+]

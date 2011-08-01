@@ -1,0 +1,16 @@
+[
+	{
+		"path": "thorny entity-system base",
+		"autoexec": true
+	},
+	{
+		"path": "thorny entity-system hooks",
+		"autoexec": true
+	},
+	"thorny entity-system entity",
+	"thorny entity-system tag",
+	"thorny entity-system templateable",
+	"thorny entity-system spawnable",
+	"thorny entity-system component",
+	"./config/components.json"
+]

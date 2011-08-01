@@ -1,0 +1,17 @@
+[
+	"./config/default.json",
+	"thorny-spec-demo welcome",
+	"thorny-spec-demo basetester",
+	{
+		"path": "thorny-spec-demo auto-executed",
+		"autoexec": true
+	},
+	{"path": "thorny-spec-demo component a", "autoexec": true},
+	"thorny-spec-demo component b",
+	"thorny-spec-demo component c",
+	"thorny-spec-demo component d",
+	"thorny-spec-demo component e",
+	"thorny-spec-demo component f",
+	"thorny-spec-demo component notunique",
+	"thorny-spec-demo level fake shape"
+]
